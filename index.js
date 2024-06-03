@@ -21,14 +21,28 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
+    const bookDB = client.db("bookDB");
+    const booksCollection = bookDB.collection("booksCollection");
+    app.get('/books',async(req,res)=>{
+        const query={}
+        const cursor=bookDB.find(query);
+        const books= await cursor.toArray();
+        res.send(books)
+    })
+
+    app.post('/books',async(req,res)=>{
+        const books={
+            name:'text Book',
+            page:26
+        };
+        const result=await booksCollection.insertOne(books);
+        res.send(result)
+    })
+    
     console.log("MongoDB is connected");
   } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
+  
   }
 }
 run().catch(console.dir);

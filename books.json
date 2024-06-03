@@ -1,0 +1,64 @@
+{
+  "books": [
+    {
+      "title": "Treasure",
+      "subject": "Fiction",
+      "author": "Clive Cussler and Justin Scott",
+      "pages": 547,
+      "price": 480,
+      "language": "English",
+      "description": "A violent rise of fundamentalism in Mexico and Egypt has the United States captive inside its own borders, but when the Egyptian Secretary General of the United Nations survives a murderous plane crash in Greenland, Dirk Pitt is pulled into the storm.",
+      "image_url": "https://i.ibb.co/BTwN8n1/book1.jpg"
+    },
+    {
+      "title": "Wolves of the Calla",
+      "subject": "Thrillers",
+      "author": "Stephen",
+      "pages": 714,
+      "price": 510,
+      "language": "English",
+      "description": "Roland Deschain and his ka-tet are bearing southeast through the forests of Mid-World, the almost timeless landscape that seems to stretch from the wreckage of civility that defined Roland's youth to the crimson chaos that seems the future's only promise.",
+      "image_url": "https://i.ibb.co/JtDH5Wj/book2.jpg"
+    },
+    {
+      "title": "The great shalom",
+      "subject": "Kids",
+      "author": "Peter J. Dyck",
+      "pages": 96,
+      "price": 80,
+      "language": "English",
+      "description": "Safe and happy in the forest, the animals and birds try to find a way to stop the farmer from cutting down trees and destroying their home.",
+      "image_url": "https://i.ibb.co/M1GRrtt/book3.jpg"
+    },
+    {
+      "title": "The Dark Tower VI",
+      "subject": "Thrillers",
+      "author": "Peter J. Dyck",
+      "pages": 430,
+      "price": 380,
+      "language": "English",
+      "description": "Susannah, now pregnant, has yet another taking control of her. The demon-mother, Mia, uses Susannah and Black Thirteen to transport to New York City of 1999. Jake, Oy, and Pere Callahan must rescue Susannah.",
+      "image_url": "https://i.ibb.co/RN9Zn8P/book4.jpg"
+    },
+    {
+      "title": "Atomic Habits",
+      "subject": "Education",
+      "author": "James Clear",
+      "pages": 320,
+      "price": 280,
+      "language": "English",
+      "description": "No matter your goals, Atomic Habits offers a proven framework for improving every day. James Clear, one of the world's leading experts on habit formation, reveals practical strategies that will teach you exactly how to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results.",
+      "image_url": "https://i.ibb.co/YpcHvtZ/book5.jpg"
+    },
+    {
+      "title": "The Psychology of Money",
+      "subject": "Economics",
+      "author": "Morgan Housel",
+      "pages": 256,
+      "price": 210,
+      "language": "English",
+      "description": "Timeless lessons on wealth, greed, and happiness doing well with money isn’t necessarily about what you know. It’s about how you behave. And behavior is hard to teach, even to really smart people. How to manage money, invest it, and make business decisions are typically considered to involve a lot of mathematical calculations.",
+      "image_url": "https://i.ibb.co/mDrwCvt/book6.jpg"
+    }
+  ]
+}
