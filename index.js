@@ -32,10 +32,7 @@ async function run() {
     })
 
     app.post('/books',async(req,res)=>{
-        const books={
-            name:'text Book',
-            page:26
-        };
+        const books=req.body;
         const result=await booksCollection.insertOne(books);
         res.send(result)
     })
