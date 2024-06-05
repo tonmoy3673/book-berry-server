@@ -11,31 +11,7 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
 
-// function verifyToken(req, res, next) {
-//   const authHeader = req.headers.authorization;
-//   console.log("Authorization Header:", authHeader);
 
-//   if (!authHeader) {
-//     return res.status(401).send({ message: "Unauthorized Access" });
-//   }
-
-//   const token = authHeader.split(" ")[1];
-
-//   if (!token) {
-//     return res.status(401).send({ message: "Unauthorized Access" });
-//   }
-
-//   jwt.verify(token, process.env.ACCESS_TOKEN, function (err, decoded) {
-//     if (err) {
-//       console.log("Token verification error:", err);
-//       return res.status(403).send({ message: "Forbidden Access" });
-//     } else {
-//       console.log("Decoded Token:", decoded);
-//       req.decoded = decoded;
-//       next();
-//     }
-//   });
-// }
 const verifyJWT = async (req, res, next) => {
   try {
     const authHeader = req.headers.authorization;
@@ -128,7 +104,7 @@ async function run() {
       res.send(books);
     });
 
-    app.post("/books", async (req, res) => {
+    app.post("/books",verifyJWT, async (req, res) => {
       const books = req.body;
       const result = await booksCollection.insertOne(books);
       res.send(result);
@@ -141,7 +117,7 @@ async function run() {
       res.send(book);
     });
 
-    app.patch("/books/:id", async (req, res) => {
+    app.patch("/books/:id",verifyJWT, async (req, res) => {
       const id = req.params.id;
       const updatedData = req.body;
       const result = await booksCollection.updateOne(
@@ -151,7 +127,7 @@ async function run() {
       res.send(result);
     });
 
-    app.delete("/books/:id", async (req, res) => {
+    app.delete("/books/:id",verifyJWT, async (req, res) => {
       const id = req.params.id;
       const result = await booksCollection.deleteOne({ _id: new ObjectId(id) });
       res.send(result);
