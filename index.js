@@ -84,14 +84,7 @@ async function run() {
       };
       const result = await userCollection.updateOne(filter, updateDoc, options);
 
-      // JWT
-      // const token = jwt.sign(
-      //   { email: user.email },
-      //   process.env.JWT_SECRET_TOKEN,
-      //   {
-      //     expiresIn: "1d",
-      //   }
-      // );
+ 
 
       const token = jwt.sign(
           email,
@@ -106,14 +99,11 @@ async function run() {
 
     // ============= get user ==========//
     app.get("/user/:email", verifyJWT, async (req, res) => {
-      const decoded = req.decoded;
+      const {decoded }= req.decoded;
       const email = req.params.email;
 
-      console.log(decoded);
 
-      // if (decoded.email !== email) {
-      //   res.status(403).send({ message: "unauthorized access" });
-      // }
+     
       const query = { email: email };
 
       const user = await userCollection.findOne(query);
